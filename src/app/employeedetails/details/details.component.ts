@@ -12,6 +12,8 @@ import { LoginComponentComponent } from 'src/app/login/login-component/login-com
 export class DetailsComponent implements OnInit {
 
   getEmpData:IEmployee[]=[]
+  teamlist:any[]=[]
+
   loggedData:any
   constructor(private route:ActivatedRoute) { 
     
@@ -31,7 +33,7 @@ export class DetailsComponent implements OnInit {
       
       
     })
-    
+    this.teamlist=JSON.parse(localStorage.getItem('teamlist') || '{}')
     
   }
     

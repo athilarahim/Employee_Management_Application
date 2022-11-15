@@ -30,6 +30,8 @@ export class AuthService {
   deleteUser(){
     localStorage.removeItem("currentUser");
     this.router.navigate(['/'])
+    window.alert("Successfully logged out!")
+
 
 
   }

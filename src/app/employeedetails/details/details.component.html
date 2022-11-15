@@ -3,7 +3,11 @@
         <div class="container">
           <h6>{{loggedData.EmployeeName}}</h6>
          <p>Employee ID: {{loggedData.EmployeeId}}</p>
-          <p>Team Number: {{loggedData.TeamNumber}}</p>
+          <div *ngFor="let team of teamlist">
+            <div *ngIf="loggedData.TeamNumber===team.Teamno">
+          <p>Team Name: {{team.Teamname}}</p>
+          </div>
+          </div>
           <p>Phone Number: {{loggedData.PhoneNumber}}</p>
           <p>Address: {{loggedData.Address}}</p>
         </div>

@@ -11,11 +11,14 @@ import { IEmployee } from 'src/app/interface';
 export class HomeComponentComponent implements OnInit {
  
  list:IEmployee[]=[]
+ teamlist:any[]=[]
+
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.list=JSON.parse(localStorage.getItem('emplist') || '{}')
+    this.teamlist=JSON.parse(localStorage.getItem('teamlist') || '{}')
 
   }
 
@@ -27,6 +30,7 @@ export class HomeComponentComponent implements OnInit {
       this.router.navigate(['/login'])
     }
     else {
+      
       this.router.navigate(['/employeedetails',object.EmployeeId])
     }
 
